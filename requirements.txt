@@ -1,0 +1,8 @@
+mdformat
+mdformat-gfm
+mdformat-frontmatter
+mdformat-gfm-alerts
+mdformat-web
+mdformat-ruff
+mdformat-obsidian
+mdformat-recover-urls
