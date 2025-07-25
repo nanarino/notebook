@@ -80,8 +80,10 @@ document.body //返回body元素
 以上都是动态获取，静态获取:
 
 ```javascript
-document.querySelector(".box") //用CSS的选择器选择方式返回满足条件的第一个元素
-document.querySelectorAll(".box li") //用CSS的选择器选择方式返回满足条件的所有的元素集合
+// 用CSS的选择器选择方式返回满足条件的第一个元素
+document.querySelector(".box")
+// 用CSS的选择器选择方式返回满足条件的所有的元素集合
+document.querySelectorAll(".box li")
 ```
 
 动态获取同静态获取的区别在讲 DOM 方法的时候说明

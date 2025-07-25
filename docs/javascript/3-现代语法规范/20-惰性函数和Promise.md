@@ -8,13 +8,12 @@
 
 在 js 中，惰性函数执行会创建一个生成器（**Generator**）。
 
-```javascript
+```shell
 > function* foo() {}
 undefined
-    >
-    ({}).toString.call(foo)
-'[object GeneratorFunction]' >
-({}).toString.call(foo())
+> ({}).toString.call(foo)
+'[object GeneratorFunction]'
+> ({}).toString.call(foo())
 '[object Generator]'
 ```
 
@@ -62,7 +61,7 @@ function* generatorFunction() {
         c = 0
     }
 }
-let iter = generatorFunction()
+const iter = generatorFunction()
 iter.next().value //1   0+1+0
 iter.next(3).value //5  1+1+3
 iter.next(5).value //11 5+1+5

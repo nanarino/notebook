@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, onBeforeUnmount } from "vue"
+import { onMounted, ref, onBeforeUnmount, useTemplateRef } from "vue"
 
 const PALETTE = {
     a: [252, 202, 53],
@@ -22,7 +22,7 @@ const PALETTE = {
     r: [248, 36, 53],
     s: [239, 134, 27],
 } as const
-const canvasRef = ref<HTMLCanvasElement | null>(null)
+const canvasRef = useTemplateRef("canvasRef")
 const ani = ref(NaN)
 const frames: (() => void)[] = []
 
@@ -41,9 +41,9 @@ onMounted(() => {
         points: (number | undefined)[]
     ) => {
         let last = -1,
-            p: number | undefined
+            p: number
         for (p of points) {
-            p = p || last + 1
+            p ??= last + 1
             ;[
                 canvas.data[p * 4],
                 canvas.data[p * 4 + 1],

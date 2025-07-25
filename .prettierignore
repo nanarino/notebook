@@ -1,1 +1,3 @@
 docs/**/*.md
+package.json
+.vscode/

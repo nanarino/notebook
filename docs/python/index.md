@@ -17,30 +17,15 @@
 
 ## 安装环境
 
-服务器上推荐安装兼容最好的 python3.9。\
-学习时推荐激进地给 PC 安装 python 最高版本。
+传统安装方式: `choco install python` 或安装包
 
-不要`环境变量`和`pip`，强制自己使用虚拟环境吧\
-以默认位置一键安装即可\
-默认位置是`C:\Users\Administrator\AppData\Local\Programs\Python\Python39`
+更推荐使用 `uv` 或者 `rye` 来管理python版本
 
-这里以 Windows 为例，安装包安装后，在 cmd 中输入`python`或者`py`，按下回车：
-
-```bash
-Microsoft Windows [版本 10.0.17763.107]
-(c) 2018 Microsoft Corporation。保留所有权利。
-
-C:\Users\Administrator>py
-Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
-
-现在推荐的安装方式：[astral-sh/rye](https://github.com/astral-sh/rye)
+我使用的是：[astral-sh/uv](https://github.com/astral-sh/uv)
 
 ## 虚拟环境
 
-传统方式创建和激活虚拟环境（也是 Windows）：
+如果你使用传统方式安装python，需要激活虚拟环境（以 Windows 例）：
 
 ```powershell
 PS C:\Users\Administrator>py -m venv .venv
@@ -49,9 +34,7 @@ PS C:\Users\Administrator>.\.venv\Scripts\activate
 
 ```
 
-在虚拟环境中 pip 和 python 可以直接使用。注意创建后的虚拟环境路径不能移动位置。
-
-现在推荐的方式：[astral-sh/uv](https://github.com/astral-sh/uv)。
+在虚拟环境中 `pip` 和 `python` 可以直接使用
 
 ## 常见问题
 
@@ -61,13 +44,15 @@ PS C:\Users\Administrator>.\.venv\Scripts\activate
   'python' 不是内部或外部命令，也不是可运行的程序或批处理文件。
   :::
 
-  没有设置环境变量。但你也可以使用`py`命令
+  对于传统安装方式，这是没有设置环境变量，但可以使用 `py` 命令
+
+  对于 `uv` 安装的python这是正常的，可以使用 `uv python list` 获取python路径
 
   ::: warning C:\\Users\\Administrator>pip -V
   'pip' 不是内部或外部命令，也不是可运行的程序或批处理文件。
   :::
 
-  问题同上，但你也可以使用`py -m pip`命令或进入虚拟环境
+  问题同上，但你也可以使用 `python -m pip` 命令或进入虚拟环境
 
   ::: warning C:\\Users\\Administrator>pip -V
   You are using pip version 10.0.3, however version 19.1.1 is available.\
@@ -87,7 +72,7 @@ ______________________________________________________________________
 
 - **多版本**问题
 
-列出安装过的 python 以及路径：
+传统方式安装的python，可透过 `py` 命令列出安装过的 python 以及路径：
 
 ```powershell
 C:\Users\Administrator>py --list-paths
@@ -97,3 +82,5 @@ C:\Users\Administrator>py --list-paths
 ```
 
 在项目中直接指定虚拟环境来解决。因为在虚拟环境中原 python 和 pip 的环境变量都无效化了。
+
+`uv` 项目里运行python脚本则相当于每次运行前自动进入虚拟环境，执行完毕自动退出虚拟环境。

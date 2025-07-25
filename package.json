@@ -1,7 +1,7 @@
 {
   "name": "notebook",
   "version": "5.1.0",
-  "main": "docs_dev.cmd",
+  "main": "docs/.vitepress/config.ts",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -30,5 +30,10 @@
     "vitepress": "^1.6.3",
     "vitepress-plugin-mermaid": "^2.0.17",
     "vue": "^3.5.13"
+  },
+  "pnpm": {
+    "overrides": {
+      "vue": "$vue"
+    }
   }
 }

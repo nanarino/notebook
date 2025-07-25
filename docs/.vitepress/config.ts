@@ -17,14 +17,16 @@ const a = (thisSidebar: nav, dirName: string, fileName: string) => {
     )}﹒${title}`.replace(/\.md$/, "")
     let link: string = thisSidebar
     if (num !== "0") link += `${dirName}/${fileName}`
-    return { text, link }
+    return { text, link, index: Number.parseInt(num) }
 }
 const aaa = async (thisSidebar: nav, dirName: string) => {
     const [_, num, text] = dirName.split(/^(\d+)-/)
     if (_) return null
     const files = await readdir(`docs${thisSidebar}${dirName}`)
     if (num === "0") files.unshift("0-准备环境")
-    const items = files.map((_) => a(thisSidebar, dirName, _))
+    const items = files
+        .map((_) => a(thisSidebar, dirName, _))
+        .sort((m, n) => m.index - n.index)
     return { text, items }
 }
 
@@ -69,7 +71,8 @@ export default withMermaid({
             },
         },
         markdown: {
-            config: (md) => md.use(mathjax3),
+            config: (md) =>
+                md.use(mathjax3),
         },
         vue: {
             template: {

@@ -21,10 +21,9 @@ pnpm i
 安裝格式化工具
 
 ```bash
-# 使用pip
-pip install -r requirements.txt
-# 或使用uv
 uv tool install mdformat --with-requirements requirements.txt
+# 或者使用 pip
+python -m pip install -r requirements.txt
 ```
 
 脚手架命令
@@ -40,7 +39,12 @@ pnpm docs:build
 mdformat docs
 ```
 
-可以将配置文件中的`base: '/notebook/'`改为`base: '/'`
+本地运行可以将配置文件中的base改为 `/`：
+
+```diff
+- const base = "/notebook/"
++ const base = "/"
+```
 
 ## 借物
 

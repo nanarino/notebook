@@ -16,3 +16,6 @@
     --vp-font-family-mono: "JetBrains Mono", Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", HYWenHei;
 }
+:root.dark {
+    --vp-c-indigo-soft: #b54ce6;
+}

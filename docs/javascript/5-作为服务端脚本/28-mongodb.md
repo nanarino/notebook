@@ -30,71 +30,71 @@ mongo
 显示所有数据库
 
 ```powershell
->show dbs
+> show dbs
 ```
 
 删除数据库
 
 ```powershell
->db.dropDatabase(数据库名字)
+> db.dropDatabase(数据库名字)
 ```
 
 进入数据库(不存在则新建)
 
 ```powershell
->use 数据库名
+> use 数据库名
 ```
 
 显示当前数据库中所有集合
 
 ```powershell
->show collections
+> show collections
 ```
 
 新建集合
 
 ```powershell
->db.createCollection("集合名")
+> db.createCollection("集合名")
 ```
 
 删除集合
 
 ```powershell
->db.集合名.drop()
+> db.集合名.drop()
 ```
 
 查数据
 
 ```powershell
->db.集合名.find({键值对})
+> db.集合名.find({键值对})
 ```
 
 查数据并格式化输出
 
 ```powershell
->db.集合名.find({键值对}).pretty()
+> db.集合名.find({键值对}).pretty()
 ```
 
 增数据（直接向一个不存在的集合中插入数据也能创建集合）
 
 ```powershell
->db.集合名.insert({键值对})
+> db.集合名.insert({键值对})
 ```
 
 增/改数据
 
 ```powershell
->db.集合名.update({键值对},{$add/$set:{键值对}}{是否全局})
+> db.集合名.update({键值对},{$add/$set:{键值对}}{是否全局})
 ```
 
 删数据
 
 ```powershell
->db.集合名.remove(obj)
+> db.集合名.remove(obj)
 
->db.集合名.deleteOne(obj)
+> db.集合名.deleteOne(obj)
 
->db.集合名.deleteMany(obj)
+> db.集合名.deleteMany(obj)
 ```
 
 ## 使用 mongoose

@@ -114,8 +114,10 @@ list.removeChild(ali[0]) // 从父元素中删除节点。必须是父子关系�
 完全修改 = 删除+增加
 
 ```javascript
-list.replaceChild(document.createElement("a"), ali[0]) //选中儿子ali[0]替换成新建的a元素节点
-list.relaceWith(document.createElement("li")) // 将自己替换成li元素节点
+// 选中儿子ali[0]替换成新建的a元素节点
+list.replaceChild(document.createElement("a"), ali[0])
+// 将自己替换成li元素节点
+list.relaceWith(document.createElement("li"))
 ```
 
 修改顺序用`insertBefore` 移动子节点到其他子节点之前。 也可以使用`appendChild`
@@ -185,16 +187,6 @@ li.previousElementSibing //前一个元素节点
 - 子元素
 
   子元素可能是多个，也可能是一个。
-
-  ```html
-  <ul>
-   <li>
-   </li>
-   asdasd
-   <li>
-   </li>
-  </ul>
-  ```
 
   ```javascript
   let ul = document.querySelector("ul")
@@ -357,8 +349,10 @@ document.body.scrollTop || document.documentElement.scrollTop
 ```javascript
 document.body.onclick = function(e) {
     // e 是 前面onclick事件触发之后整理的那一时刻的信息对象，叫事件对象
-    console.log(e.clientX, e.clientY) // 相对于窗口的左上角位值
-    console.log(e.pageX, e.pageY) // 相对于文档位置的左上角的位置,包含滚动条隐藏部分
+    // 相对于窗口的左上角位值
+    console.log(e.clientX, e.clientY)
+    // 相对于文档位置的左上角的位置,包含滚动条隐藏部分
+    console.log(e.pageX, e.pageY)
 }
 ```
 
