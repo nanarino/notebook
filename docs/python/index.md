@@ -1,31 +1,16 @@
 # HelloWorld
 
-## 常识
-
-熟悉 Windows 操作系统的基本使用：
-
-- 压缩/解压文件
-- 安装/卸载软件
-- 添加环境变量/服务
-- 修改后缀/注册表
-
-熟悉搜索引擎的使用：
-
-- 谷歌
-- 必应
-- 哔哩哔哩
-
 ## 安装环境
 
 传统安装方式: `choco install python` 或安装包
 
-更推荐使用 `uv` 或者 `rye` 来管理python版本
+更推荐使用 `uv` 或者 `rye` 来管理 python 版本
 
 我使用的是：[astral-sh/uv](https://github.com/astral-sh/uv)
 
 ## 虚拟环境
 
-如果你使用传统方式安装python，需要激活虚拟环境（以 Windows 例）：
+如果你使用传统方式安装 python，专案里通常需要创建并激活虚拟环境（以 Windows 例）：
 
 ```powershell
 PS C:\Users\Administrator>py -m venv .venv
@@ -46,7 +31,9 @@ PS C:\Users\Administrator>.\.venv\Scripts\activate
 
   对于传统安装方式，这是没有设置环境变量，但可以使用 `py` 命令
 
-  对于 `uv` 安装的python这是正常的，可以使用 `uv python list` 获取python路径
+  推荐不设置环境变量
+
+  对于 `uv` 安装的 python 这是正常的，可以使用 `uv python list` 获取 python 路径
 
   ::: warning C:\\Users\\Administrator>pip -V
   'pip' 不是内部或外部命令，也不是可运行的程序或批处理文件。
@@ -72,7 +59,29 @@ ______________________________________________________________________
 
 - **多版本**问题
 
-传统方式安装的python，可透过 `py` 命令列出安装过的 python 以及路径：
+使用 `uv python list` 下载过的 python 以及路径（`uv` 没有链接全局解释器的捷径）：
+
+```powershell
+C:\Users\Administrator>uv python list
+cpython-3.14.0a7-windows-x86_64-none                 <download available>
+cpython-3.14.0a7+freethreaded-windows-x86_64-none    <download available>
+cpython-3.13.3-windows-x86_64-none                   AppData\Roaming\uv\python\cpython-3.13.3-windows-x86_64-none\python.exe
+cpython-3.13.3+freethreaded-windows-x86_64-none      <download available>
+cpython-3.12.10-windows-x86_64-none                  <download available>
+cpython-3.11.12-windows-x86_64-none                  <download available>
+cpython-3.10.17-windows-x86_64-none                  <download available>
+cpython-3.9.22-windows-x86_64-none                   <download available>
+cpython-3.8.20-windows-x86_64-none                   <download available>
+pypy-3.11.11-windows-x86_64-none                     <download available>
+pypy-3.10.16-windows-x86_64-none                     <download available>
+pypy-3.9.19-windows-x86_64-none                      <download available>
+pypy-3.8.16-windows-x86_64-none                      <download available>
+graalpy-3.11.0-windows-x86_64-none                   <download available>
+graalpy-3.10.0-windows-x86_64-none                   <download available>
+
+```
+
+传统方式安装的python，可透过 `py --list-paths` 命令列出安装过的 python 以及路径（`*` 为当前 `py` 指向的全局解释器）：
 
 ```powershell
 C:\Users\Administrator>py --list-paths
@@ -81,6 +90,6 @@ C:\Users\Administrator>py --list-paths
 
 ```
 
-在项目中直接指定虚拟环境来解决。因为在虚拟环境中原 python 和 pip 的环境变量都无效化了。
+在项目中直接指定虚拟环境来解决。因为在虚拟环境中原全局 `python` 和 `pip` 的环境变量都无效化了。
 
 `uv` 项目里运行python脚本则相当于每次运行前自动进入虚拟环境，执行完毕自动退出虚拟环境。

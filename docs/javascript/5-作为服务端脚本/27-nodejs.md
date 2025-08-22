@@ -8,7 +8,15 @@ Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境
 pnpm env use --global lts
 ```
 
-关于 pnpm，见[https://pnpm.io/zh/](https://pnpm.io/zh/), 它可以完全代替 nvm 以及 npm。
+关于 pnpm，见[https://pnpm.io/zh/](https://pnpm.io/zh/), 它可以完全代替 nvm 以及 npm：
+
+```powershell
+C:\Users\Administrator>pnpm env list
+  14.21.3
+* 22.14.0
+```
+
+`*` 为当前链接的全局 node 版本
 
 ## 官方文档
 

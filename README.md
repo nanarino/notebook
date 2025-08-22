@@ -39,13 +39,6 @@ pnpm docs:build
 mdformat docs
 ```
 
-本地运行可以将配置文件中的base改为 `/`：
-
-```diff
-- const base = "/notebook/"
-+ const base = "/"
-```
-
 ## 借物
 
 封面
