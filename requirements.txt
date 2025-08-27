@@ -5,3 +5,4 @@ mdformat-gfm-alerts
 mdformat-web
 mdformat-ruff
 mdformat-obsidian
+mdformat-recover-urls

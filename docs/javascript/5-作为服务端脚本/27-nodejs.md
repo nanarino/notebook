@@ -22,7 +22,7 @@ C:\Users\Administrator>pnpm env list
 
 本笔记只记录基础，详细请查看：
 
-<http://nodejs.cn/api/>
+[http://nodejs.cn/api/](http://nodejs.cn/api/)
 
 ## 常用的内置模块
 
